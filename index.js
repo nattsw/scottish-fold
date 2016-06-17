@@ -1,2 +1,3 @@
 const cats = ['tomtom', 'steaky', 'zorro'];
-console.log(cats);
+const me = 'nat'
+console.log(`${me} loves ${cats}`);
