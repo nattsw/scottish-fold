@@ -4,7 +4,8 @@
   "description": "A Reddit browser front-end app",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "webpack": "^1.13.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -16,6 +17,7 @@
   },
   "scripts": {
     "test": "karma start",
+    "prestart": "webpack -p",
     "start": "node server.js"
   },
   "author": "Natalie Tay",
