@@ -20,7 +20,7 @@
   },
   "scripts": {
     "test": "karma start",
-    "prestart": "webpack -p",
+    "prestart": "webpack -d",
     "start": "node server.js"
   },
   "author": "Natalie Tay",
