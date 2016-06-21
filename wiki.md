@@ -245,11 +245,68 @@ the bundled file, and also remember to (2) set the index page to use the file.
 
 	and run `npm start`. You’ll see that webpack does not complain about the
 	usage of backticks, whereas without the loader you’ll get an error, also
-	you'll notice that there's some nice stuff in the console.
+	you'll notice that there's some nice stuff in the browser console.
 
 ## Adding your first react component
 
-1. Add the `react` dependency into our project by running `npm install react -S`.
+For a quick win, let's create a component and see it working before attempting
+to TDD our React application. React essentially uses [components] to encapsulate
+state and UI, something which I've always thought of as a power-packed HTML element.
+
+1. Add the `react` dependency to the project by running `npm install react -S`
+
+1. Since almost every web application of a decent size has a navbar, let's create
+one in `components/navbar.js`.
+
+	> One common practice for React applications is to put all React components
+	  into a `components` folder.
+
+	```
+	// components/navbar.js file
+	import React, { Component } from 'react';
+
+	export default class Navbar extends Component {
+	    render() {
+	        return (
+	            <div className="nav-main">
+	                Reddit
+	            </div>
+	        );
+	    }
+	}
+	```
+
+	A React component usually makes use of JSX, which creates JS objects using
+	HTML syntax. In the `render` function where we use it, we are returning a
+	`div` with its class attribute as `nav-main`. In React, we use the
+	`className` keyword to set the attribute.
+
+	> [React without JSX] doesn't really [feel like React], so while it's
+	possible, I highly recommend to just use JSX.
+
+	In the example, we're exporting the Navbar as a default module of the
+	file. [This][modules] is a _really_ good explanation on ES6 modules.
+
+1. For JSX to work, we'll also need Babel to transform it for us. Thankfully,
+the guys at Babel have created a [preset plugin] for us so all we have to do is
+run `npm install babel-preset-react -D`, then add
+
+	```
+	query: {
+	    presets: ['es2015', 'react']
+	}
+	```
+
+1. // index page container
+
+1. // check that webpack picked it up
+
+1. // rendering
+
+1. On rendering the component to the screen, this [excerpt][ReactDOM] explains the outer
+world very well:
+
+	> When you're in React's world you are just building components that fit into other components. Everything is a component. Unfortunately not everything around you is built using React. At the root of your tree you still have to write some plumbing code to connect the outer world into React.
 
 
 [IntelliJ]: https://www.jetbrains.com/idea/download/
@@ -262,3 +319,9 @@ the bundled file, and also remember to (2) set the index page to use the file.
 [chai]: http://chaijs.com
 [webpack]: http://webpack.github.io/docs/tutorials/getting-started/#first-loader
 [babel]: https://babeljs.io/docs/setup/#installation
+[components]: https://facebook.github.io/react/docs/thinking-in-react.html
+[ReactDOM]: https://facebook.github.io/react/blog/2015/10/01/react-render-and-top-level-api.html
+[feel like React]: https://facebook.github.io/react/docs/displaying-data.html#jsx-syntax
+[React without JSX]: https://facebook.github.io/react/docs/displaying-data.html#react-without-jsx
+[modules]: http://exploringjs.com/es6/ch_modules.html
+[preset plugin]: https://babeljs.io/docs/plugins/

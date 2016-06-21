@@ -5,8 +5,6 @@ const app = new Express();
 app.use('/public', Express.static(`${__dirname}/public/`));
 
 app.use((req, res) => {
-    // serve this file for every request
-    // ES6 template literals: `The value of someVar is ${someVar}`
     res.sendFile(`${__dirname}/index.html`);
 });
 
