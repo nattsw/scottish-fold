@@ -1,6 +1,6 @@
 # A react-redux-webpack-karma-mocha-chai-sinon-webdriver-selenium front-end web application
 
-This is post goes into details about how to wire up a simple front-end app with
+This writeup goes into details about how to wire up a simple front-end app with
 some nice frameworks, so you don’t have to figure some chore-some things out
 yourself.
 
