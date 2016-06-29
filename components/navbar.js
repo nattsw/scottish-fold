@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
+import AppBar from 'react-toolbox/lib/app_bar';
+import Navigation from 'react-toolbox/lib/navigation';
+import Link from 'react-toolbox/lib/link';
 
 export default class Navbar extends Component {
 	render() {
 		return (
-			<div className="nav-main">
-                Reddit
-				<a href="/home">Home</a>
-            </div>
+			<AppBar className="nav-main">
+				<Navigation type="horizontal" className="nav-top">
+					<Link to="/home">Home</Link>
+				</Navigation>
+			</AppBar>
 		);
 	}
 }

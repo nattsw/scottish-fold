@@ -17,7 +17,7 @@ describe('Navbar', () => {
 	});
 
 	it('contains a link to the homepage', () => {
-		const href = window.renderedDom().querySelector('a').href;
-		expect(href).to.equal('http://localhost:9876/home');
+		const toLink = window.renderedDom().querySelector('a').attributes.to.value;
+		expect(toLink).to.equal('/home');
 	});
 });
