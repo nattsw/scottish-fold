@@ -16,8 +16,14 @@ describe('Navbar', () => {
 		window.renderedDom = () => findDOMNode(window.component);
 	});
 
-	it('contains a link to the homepage', () => {
-		const toLink = window.renderedDom().querySelector('a').attributes.to.value;
+	it("'s second link goes to the home page", () => {
+		const toLink = window.renderedDom().querySelectorAll('a')[0].attributes.to.value;
 		expect(toLink).to.equal('/home');
+	});
+
+	it("'s second link goes to the cat page", () => {
+		debugger;
+		const toLink = window.renderedDom().querySelectorAll('a')[1].attributes.to.value;
+		expect(toLink).to.equal('/cat');
 	});
 });

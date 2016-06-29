@@ -9,6 +9,7 @@ export default class Navbar extends Component {
 			<AppBar className="nav-main">
 				<Navigation type="horizontal" className="nav-top">
 					<Link to="/home">Home</Link>
+					<Link to="/cat">Cat</Link>
 				</Navigation>
 			</AppBar>
 		);
